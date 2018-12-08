@@ -34,6 +34,10 @@ class Playlist extends React.Component{
     return `${hours}:${minutes}:${seconds}`;
   }
 
+  moveUpSubHandlerCallback = () => {
+    console.log("Inside the moveUpSubHandlerCallback");
+  }
+
   render(){
 
     const trackCount = this.state.tracks.length;
@@ -44,6 +48,7 @@ class Playlist extends React.Component{
       return (
         <Track
           key={i}
+          moveUpSubHandler = {this.moveUpSubHandlerCallback}
           {...track}
         />
       );
