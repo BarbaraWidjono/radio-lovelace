@@ -15,6 +15,10 @@ class RadioSet extends React.Component{
 
   }
 
+  moveUpSongCallback = () => {
+    console.log("Inside the moveUpSongCallback");
+  }
+
   render(){
 
     return(
@@ -22,10 +26,12 @@ class RadioSet extends React.Component{
         <section className="radio-set--playlist-container">
           <Playlist
             side="Morning"
+            moveUpSong = {this.moveUpSongCallback}
             tracks={this.state.morningTracks}
           />
           <Playlist
             side="Evening"
+            moveUpSong = {this.moveUpSongCallback}
             tracks={this.state.eveningTracks}
           />
         </section>

@@ -36,6 +36,7 @@ class Playlist extends React.Component{
 
   moveUpSubHandlerCallback = () => {
     console.log("Inside the moveUpSubHandlerCallback");
+    this.props.moveUpSong()
   }
 
   render(){
