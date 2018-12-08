@@ -23,7 +23,9 @@ class Track extends React.Component{
     this.state.favorite===true? this.setState ({favorite: false}) : this.setState ({favorite: true})
   }
 
-//
+  moveUpClickHandler = () => {
+    console.log("In the moveUp");
+  }
 
   render(){
     return(
@@ -40,8 +42,10 @@ class Track extends React.Component{
         <p className="track--playtime">{this.state.playtime}</p>
         <button
           className="track--control track--to-top"
+          onClick = {this.moveUpClickHandler}
           >
           <span role="img" aria-label="send to top">🔝</span>
+
         </button>
         <button
           className="track--control track--switch"
