@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-
 import RadioSet from './components/RadioSet';
 
 import songData from './data/tracks.json';
@@ -11,21 +10,21 @@ songData.forEach((song, i) => {
 });
 
 class App extends Component {
-  constructor(){
-    super()
 
-    this.state = {
+    state = {
+      // morning: songData.slice(0, 15),
       morning: songData.slice(0, songData.length / 2),
       evening: songData.slice(songData.length / 2, songData.length)
     }
-  }
+
 
   sliceTrack = (id) => {
     console.log("Inside App.js the sliceTrack method");
     console.log(id);
-    // let slicedTrack = this.state.morning.slice(0,15);
-    // console.log(slicedTrack);
-    // this.setState({morning: slicedTrack});
+    let slice = [...this.state.morning.slice(0,id), ...this.state.morning.slice(id+1)]
+    console.log(slice);
+    // this.setState({morning: `${slice}`})
+
   }
 
   render() {
