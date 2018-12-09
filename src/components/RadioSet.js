@@ -14,8 +14,9 @@ class RadioSet extends React.Component{
   }
 
 
-  moveUpSongCallback = (track) => {
+  moveUpSongCallback = (index) => {
     console.log("Inside the moveUpSongCallback");
+    this.props.slice(index);
     // console.log(`${track.state.title}`);
     // console.log(`${track.state.index}`);
     // console.log(track);

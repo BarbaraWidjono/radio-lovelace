@@ -28,7 +28,7 @@ class Track extends React.Component{
   moveUpClickHandler = () => {
     console.log("In the moveUp");
 
-    this.props.moveUpSubHandler(this);
+    this.props.moveUpSubHandler(this.state.index);
 
   }
 

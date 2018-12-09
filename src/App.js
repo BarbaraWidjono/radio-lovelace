@@ -7,6 +7,7 @@ import songData from './data/tracks.json';
 
 songData.forEach((song, i) => {
   song.id = i;
+  // console.log(song.id);
 });
 
 class App extends Component {
@@ -19,9 +20,12 @@ class App extends Component {
     }
   }
 
-  render() {
+  sliceTrack = (index) => {
+    console.log("Inside App.js the sliceTrack method");
+    console.log(index);
+  }
 
-    // console.log(this.state.morning);
+  render() {
     return (
       <div className="App">
         <header>
@@ -29,9 +33,11 @@ class App extends Component {
         </header>
         <main className="main">
           <RadioSet tracks={this.state.morning}
-            type="morning" />
+            type="morning"
+            slice = {this.sliceTrack} />
           <RadioSet tracks={this.state.evening}
-            type="evening" />
+            type="evening"
+            slice = {this.sliceTrack}/>
         </main>
       </div>
     );
