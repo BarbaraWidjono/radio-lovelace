@@ -16,6 +16,7 @@ class Track extends React.Component{
       playtime: props.playtime,
       albumart: props.albumart,
       favorite: true,
+      songType: props.type,
     }
   }
 

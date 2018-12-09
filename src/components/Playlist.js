@@ -10,6 +10,7 @@ class Playlist extends React.Component{
 
     this.state = {
       tracks: props.tracks,
+      songType: props.side,
     }
   }
 
@@ -49,6 +50,7 @@ class Playlist extends React.Component{
       return (
         <Track
           key={i}
+          type = {this.state.songType}
           moveUpSubHandler = {this.moveUpSubHandlerCallback}
           {...track}
         />
