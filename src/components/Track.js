@@ -11,6 +11,7 @@ class Track extends React.Component{
     super(props);
 
     this.state = {
+      index: props.index,
       title: props.title,
       artist: props.artist,
       playtime: props.playtime,

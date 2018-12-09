@@ -50,6 +50,7 @@ class Playlist extends React.Component{
       return (
         <Track
           key={i}
+          index = {i}
           type = {this.state.songType}
           moveUpSubHandler = {this.moveUpSubHandlerCallback}
           {...track}
