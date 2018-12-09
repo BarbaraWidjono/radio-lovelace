@@ -11,13 +11,12 @@ class RadioSet extends React.Component{
       morningTracks: props.tracks.slice(0, props.tracks.length / 2),
       eveningTracks: props.tracks.slice(props.tracks.length / 2, props.tracks.length),
     }
-
-
   }
 
-  moveUpSongCallback = (title) => {
+  moveUpSongCallback = (track) => {
     console.log("Inside the moveUpSongCallback");
-    console.log(`${title}`);
+    console.log(`${track.state.title}`);
+
   }
 
   render(){
