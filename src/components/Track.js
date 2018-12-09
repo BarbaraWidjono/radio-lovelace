@@ -11,13 +11,13 @@ class Track extends React.Component{
     super(props);
 
     this.state = {
-      index: props.index,
       title: props.title,
       artist: props.artist,
       playtime: props.playtime,
       albumart: props.albumart,
       favorite: true,
       songType: props.type,
+      id: props.id,
     }
   }
 
@@ -27,8 +27,8 @@ class Track extends React.Component{
 
   moveUpClickHandler = () => {
     console.log("In the moveUp");
-
-    this.props.moveUpSubHandler(this.state.index);
+    console.log(this.state.id);
+    this.props.moveUpSubHandler(this.state.id);
 
   }
 

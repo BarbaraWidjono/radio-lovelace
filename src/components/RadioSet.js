@@ -14,9 +14,9 @@ class RadioSet extends React.Component{
   }
 
 
-  moveUpSongCallback = (index) => {
+  moveUpSongCallback = (id) => {
     console.log("Inside the moveUpSongCallback");
-    this.props.slice(index);
+    this.props.slice(id);
     // console.log(`${track.state.title}`);
     // console.log(`${track.state.index}`);
     // console.log(track);
@@ -31,18 +31,11 @@ class RadioSet extends React.Component{
 
     return(
       <div className="radio-set">
-        <section className="radio-set--playlist-container">
-          <Playlist
-            side={side}
-            moveUpSong = {this.moveUpSongCallback}
-            tracks={this.state.trackSet}
-          />
-          <Playlist
-            side={side}
-            moveUpSong = {this.moveUpSongCallback}
-            tracks={this.state.trackSet}
-          />
-        </section>
+        <Playlist
+          side={side}
+          moveUpSong = {this.moveUpSongCallback}
+          tracks={this.state.trackSet}
+        />
       </div>
     )
   }

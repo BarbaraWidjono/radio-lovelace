@@ -35,9 +35,9 @@ class Playlist extends React.Component{
     return `${hours}:${minutes}:${seconds}`;
   }
 
-  moveUpSubHandlerCallback = (index) => {
+  moveUpSubHandlerCallback = (id) => {
     console.log("Inside the moveUpSubHandlerCallback");
-    this.props.moveUpSong(index)
+    this.props.moveUpSong(id)
   }
 
   render(){
@@ -50,7 +50,6 @@ class Playlist extends React.Component{
       return (
         <Track
           key={i}
-          index = {i}
           type = {this.state.songType}
           moveUpSubHandler = {this.moveUpSubHandlerCallback}
           {...track}
