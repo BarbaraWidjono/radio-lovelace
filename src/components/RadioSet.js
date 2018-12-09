@@ -8,8 +8,8 @@ class RadioSet extends React.Component{
     super(props);
 
     this.state = {
-      morningTracks: props.tracks.slice(0, props.tracks.length / 2),
-      eveningTracks: props.tracks.slice(props.tracks.length / 2, props.tracks.length),
+      trackSet: props.tracks,
+      trackType: props.type,
     }
   }
 
@@ -21,30 +21,25 @@ class RadioSet extends React.Component{
     // console.log(track);
     // console.log(`${track}`);
     // console.log(this.state.morningTracks);
-    let sliceOutTrack = this.state.morningTracks.slice(0, 15);
-
-    console.log(sliceOutTrack);
-
-    this.setState({morningTracks: sliceOutTrack});
-
-    // console.log(this.state.morningTracks);
-
   }
 
   render(){
+
+    let side = "";
+    this.state.trackType === "morning"? side = "Morning" : side = "Evening";
 
     return(
       <div className="radio-set">
         <section className="radio-set--playlist-container">
           <Playlist
-            side="Morning"
+            side={side}
             moveUpSong = {this.moveUpSongCallback}
-            tracks={this.state.morningTracks}
+            tracks={this.state.trackSet}
           />
           <Playlist
-            side="Evening"
+            side={side}
             moveUpSong = {this.moveUpSongCallback}
-            tracks={this.state.eveningTracks}
+            tracks={this.state.trackSet}
           />
         </section>
       </div>
