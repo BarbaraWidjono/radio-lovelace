@@ -10,12 +10,16 @@ songData.forEach((song, i) => {
 });
 
 class App extends Component {
+    constructor(){
+      super()
 
-    state = {
-      // morning: songData.slice(0, 15),
-      morning: songData.slice(0, songData.length / 2),
-      evening: songData.slice(songData.length / 2, songData.length)
+      this.state = {
+        // morning: songData.slice(0, 15),
+        morning: songData.slice(0, songData.length / 2),
+        evening: songData.slice(songData.length / 2, songData.length)
+      }
     }
+
 
 
   sliceTrack = (id) => {
@@ -23,7 +27,8 @@ class App extends Component {
     console.log(id);
     let slice = [...this.state.morning.slice(0,id), ...this.state.morning.slice(id+1)]
     console.log(slice);
-    // this.setState({morning: `${slice}`})
+    this.setState({morning: slice}, () => {
+        console.log(this.state.morning)})
 
   }
 

@@ -41,6 +41,7 @@ class Playlist extends React.Component{
   }
 
   render(){
+    console.log("In render, here is the list of tracks", this.props.tracks, this.state.tracks);
 
     const trackCount = this.state.tracks.length;
     const playtime = this.calculatePlayTime(this.state.tracks);
